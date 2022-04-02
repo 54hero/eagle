@@ -40,9 +40,9 @@ class Person {
         // 方式一
         final Class<? extends Person> a1 = person.getClass();
         // 方式二
-        final Class<?> a2 = Class.forName("org.eagle.entity.Student");
+        final Class<?> a2 = Class.forName("org.eagle.entity.Hero");
         // 方式三
-        final Class<Student> a3 = Student.class;
+        final Class<Hero> a3 = Hero.class;
         // 方式四：基本数据类型的包装类，都有一个Type属性【课外技巧】
         final Class<Integer> type = Integer.TYPE;
 
