@@ -1,7 +1,6 @@
 package org.eagle.reflection;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.eagle.annotation.Person;
 
 /**
  * @author ljj
@@ -9,13 +8,18 @@ import org.slf4j.LoggerFactory;
  */
 public class UserReflection {
 
-    private final static Logger logger = LoggerFactory.getLogger(UserReflection.class);
 
-    public void userHandler(String className) {
+    public static void userHandler(String className) {
         try {
-            Class.forName(className);
+            final Class<?> userClass = Class.forName(className);
+            System.out.println(userClass);
+            System.out.println(userClass.getName());
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("反射异常 ----> " + e.getMessage());
         }
+    }
+
+    public static void main(String[] args) {
+        UserReflection.userHandler("org.eagle.entity.User");
     }
 }
