@@ -1,5 +1,6 @@
 package org.eagle.entity;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -16,6 +17,14 @@ class Person {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -23,7 +32,7 @@ class Person {
                 '}';
     }
 
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, NoSuchMethodException {
         Person person = new Student();
         System.out.println(person.name);
 
@@ -76,6 +85,29 @@ class Person {
         for (Method declaredMethod : declaredMethods) {
             System.out.println(declaredMethod);
         }
+        System.out.println(" ====================================== ");
+        System.out.println(superclass.getMethod("getName", (Class<?>[]) null));
+        System.out.println(superclass.getMethod("setName", String.class));
+        System.out.println(" ====================================== ");
+        System.out.println(superclass.getDeclaredMethod("getName", (Class<?>[]) null));
+        System.out.println(superclass.getDeclaredMethod("setName", String.class));
+
+        System.out.println(" ************************************** ");
+        // 获取构造器
+        // getConstructors 获取 public 构造器
+        // getDeclaredConstructors 获取所有构造器
+        final Constructor<?>[] constructors = superclass.getConstructors();
+        for (Constructor<?> constructor : constructors) {
+            System.out.println(constructor);
+        }
+        final Constructor<?>[] declaredConstructors = superclass.getDeclaredConstructors();
+        for (Constructor<?> declaredConstructor : declaredConstructors) {
+            System.out.println(declaredConstructor);
+        }
+        System.out.println(" *************************************** ");
+        // 获取指定构造器
+        final Constructor<?> constructor = superclass.getConstructor(String.class);
+        System.out.println(constructor);
     }
 }
 
