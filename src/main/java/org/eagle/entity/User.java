@@ -9,9 +9,6 @@ public class User {
     private String name;
     private Integer age;
 
-    public User() {
-    }
-
     public User(Integer id, String name, Integer age) {
         this.id = id;
         this.name = name;
