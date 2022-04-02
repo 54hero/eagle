@@ -32,14 +32,4 @@ public class UserReflection {
         System.out.println(henry);
         System.out.println("===================================");
     }
-
-    public static void userHandler(String className) {
-        try {
-            final Class<?> userClass = Class.forName(className);
-            System.out.println(userClass);
-            System.out.println(userClass.getName());
-        } catch (ClassNotFoundException e) {
-            System.out.println("反射异常 ----> " + e.getMessage());
-        }
-    }
 }
