@@ -1,18 +1,18 @@
-package org.eagle.controller;
+package org.eagle.miniPro;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author henry
  */
-public class TestController {
+public class TestPro {
 
     public void test(@RequestParam("name") String username) {
         System.out.println(username);
     }
 
     public static void main(String[] args) {
-        TestController test = new TestController();
+        TestPro test = new TestPro();
         test.test("王者天下");
     }
 }
