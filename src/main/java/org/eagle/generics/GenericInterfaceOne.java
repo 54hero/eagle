@@ -16,4 +16,13 @@ public class GenericInterfaceOne implements GenericInterface<String> {
     public void setTest(String test) {
 
     }
+
+    /**
+     * <p>泛型方法</p>
+     * 【访问修饰符】与【返回值】之间声明了【泛型列表】的方法，才是【泛型方法】
+     * 使用【泛型】的方法不是泛型方法
+     */
+    public <T,E,K,V> void look(String test) {
+
+    }
 }
