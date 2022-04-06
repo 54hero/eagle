@@ -7,6 +7,7 @@ import org.eagle.annotation.Table;
  * @author ljj
  * @description 英雄类
  */
+@SuppressWarnings("all")
 @Table("hero")
 public class Hero {
     @Field(columnName = "id", type = "String")

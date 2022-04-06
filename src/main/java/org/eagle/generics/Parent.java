@@ -3,6 +3,7 @@ package org.eagle.generics;
 /**
  * @author ljj
  */
+@SuppressWarnings("all")
 public class Parent<T> {
     private T parent;
 
