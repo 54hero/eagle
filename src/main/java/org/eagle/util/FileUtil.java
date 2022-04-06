@@ -9,6 +9,7 @@ import java.io.IOException;
  * @author ljj
  * @description 文件工具
  */
+@SuppressWarnings("all")
 public class FileUtil {
 
     /**
