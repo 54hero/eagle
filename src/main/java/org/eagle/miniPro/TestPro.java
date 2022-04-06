@@ -1,13 +1,11 @@
 package org.eagle.miniPro;
 
-import org.springframework.web.bind.annotation.RequestParam;
-
 /**
  * @author henry
  */
 public class TestPro {
 
-    public void test(@RequestParam("name") String username) {
+    public void test(String username) {
         System.out.println(username);
     }
 
