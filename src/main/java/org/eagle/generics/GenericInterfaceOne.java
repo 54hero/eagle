@@ -23,6 +23,7 @@ public class GenericInterfaceOne implements GenericInterface<String> {
      * 使用【泛型】的方法不是泛型方法
      * 【泛型方法】的【泛型标识】独立于【泛型类】，即使与【泛型类的泛型标识相同】，也不影响【泛型方法】指定【泛型类型】
      * 【泛型类的成员方法】不能设置为【静态方法】，【泛型方法】可以声明为【静态方法】
+     * 【泛型方法】可以声明在任何方法中（注：可以时非泛型方法）
      */
     public <T,E,K,V> void look(String test) {
 
