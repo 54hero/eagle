@@ -2,6 +2,7 @@ package org.eagle.generics;
 
 /**
  * @author ljj
+ * @description 泛型：类型参数化
  */
 @SuppressWarnings("all")
 public class Parent<T> {
