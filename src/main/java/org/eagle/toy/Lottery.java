@@ -1,5 +1,8 @@
 package org.eagle.toy;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -9,6 +12,8 @@ import java.util.Random;
  */
 @SuppressWarnings("all")
 public class Lottery<T> {
+
+    Logger logger = LoggerFactory.getLogger(Lottery.class);
 
     Random random = new Random();
 
@@ -21,6 +26,7 @@ public class Lottery<T> {
     T getPrize() {
         if (0 == prizePool.size()) {
             System.out.println("奖品没了，下次赶早！！！");
+            logger.info("奖品没了，下次赶早！！！");
             return null;
         }
 
